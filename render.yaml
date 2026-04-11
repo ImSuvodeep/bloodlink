@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: bloodlink-render
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: node server/index.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        value: 95e6cb5288b0eefb4fadbdeeb5e9b9862e109adb5b55b50005e05a06f5e2795793703f360fd0f557440de6e22f72344053cbaf552772a00e70c2fd0547f2beb0
+      - key: JWT_EXPIRES_IN
+        value: 7d
+      - key: OTP_ENABLED
+        value: false
